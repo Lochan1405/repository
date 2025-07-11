@@ -13,12 +13,12 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/contact", methods=["POST", "GET"])
+@app.route("/contact", methods=["POST"])
 def contact():
-    if request.method=="GET":
-        return render_template("contact.html")
-    elif request.method=="POST":
+    if request.method=="POST":
         return "Message successfully sent!!!"
+    else:
+        return render_template("contact.html")
 
 
 @app.route("/post/<int:index>")
